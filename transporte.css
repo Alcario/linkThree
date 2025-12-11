@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Fondo animado con los colores del logo - 100vh exacto */
+.background {
+  height: 100vh;
+  background: linear-gradient(135deg, #4A3A7F, #6B5A9F, #8A7ABF);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal con estilo viejo */
+.container-custom {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo de la empresa */
+.logo {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 18px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+/* Grid de enlaces - estilo viejo */
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+/* Tarjetas de enlace - estilo viejo con colores del logo */
+.link-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 15px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(74, 58, 127, 0.15);
+  border-color: #6B5A9F;
+}
+
+.link-card:active {
+  transform: translateY(0);
+}
+
+/* Barra superior en hover */
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4A3A7F, #6B5A9F);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Iconos de las tarjetas */
+.link-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #4A3A7F;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link-card:hover i {
+  transform: scale(1.15);
+  color: #2d2450;
+}
+
+/* Texto de las tarjetas */
+.link-card span {
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.link-card:hover span {
+  color: #2d2450;
+}
+
+/* Estilos para tarjetas en construcción */
+.construction {
+  position: relative;
+  cursor: pointer;
+}
+
+.construction::after {
+  content: 'Próximamente';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  font-size: 9px;
+  background-color: #ffd54f;
+  color: #333;
+  padding: 2px 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.construction:hover::after {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  font-size: 13px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #666;
+}
+
+footer a {
+  color: #4A3A7F;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #2d2450;
+  text-decoration: underline;
+}
+
+/* Modal personalizado con colores del logo */
+.modal-content {
+  border-radius: 20px;
+  border: none;
+}
+
+.construction-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #4A3A7F 0%, #2d2450 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.construction-icon-large {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/* Botón personalizado */
+.btn-primary-custom {
+  background: linear-gradient(135deg, #4A3A7F 0%, #2d2450 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 0;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(74, 58, 127, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 58, 127, 0.6);
+  background: linear-gradient(135deg, #5a4a8f 0%, #3d3460 100%);
+  color: #fff;
+}
+
+.btn-primary-custom:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container-custom {
+    padding: 18px 15px;
+  }
+  
+  .logo {
+    max-width: 300px;
+    margin-bottom: 18px;
+  }
+  
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+  }
+  
+  .link-card {
+    padding: 18px 12px;
+  }
+  
+  .link-card i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  footer {
+    margin-top: 18px;
+    padding-top: 12px;
+  }
+}
+
+@media (max-height: 600px) {
+  .background {
+    padding: 10px;
+  }
+  
+  .container-custom {
+    padding: 15px;
+  }
+  
+  .logo {
+    max-width: 260px;
+    margin-bottom: 12px;
+  }
+  
+  .links {
+    margin: 12px 0;
+    gap: 10px;
+  }
+  
+  .link-card {
+    padding: 14px 12px;
+  }
+  
+  .link-card i {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+  }
+  
+  footer {
+    margin-top: 12px;
+    padding-top: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .background {
+    padding: 8px;
+  }
+  
+  .container-custom {
+    padding: 12px;
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .links {
+    margin: 10px 0;
+    gap: 8px;
+  }
+  
+  .link-card {
+    padding: 12px 10px;
+  }
+  
+  .link-card i {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+  
+  .link-card span {
+    font-size: 0.85rem;
+  }
+  
+  footer {
+    margin-top: 10px;
+    padding-top: 8px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mallorca Transporta - TVM</title>
+
+  <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="transporte.css">
+</head>
+<body>
+  <div class="background">
+    <div class="container-custom">
+      <header>
+        <img src="./assets/logos/logoTransporte.png" alt="Mallorca Transporta" class="logo"/>
+      </header>
+
+      <main class="links">
+        <a href="tel:+34722246573" class="link-card" aria-label="Llamar por teléfono">
+          <i class="bi bi-telephone-fill"></i>
+          <span>Teléfono</span>
+        </a>
+
+        <a href="https://wa.me/34722246573" class="link-card" aria-label="Contactar por WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="#" class="link-card construction" data-bs-toggle="modal" data-bs-target="#constructionModal" data-service="Instagram" aria-label="Instagram - Próximamente">
+          <i class="bi bi-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a href="mailto:info@mallorcatransporta.com" class="link-card" aria-label="Enviar correo electrónico">
+          <i class="bi bi-envelope-fill"></i>
+          <span>Email</span>
+        </a>
+
+        <a href="#" class="link-card construction" data-bs-toggle="modal" data-bs-target="#constructionModal" data-service="Página Web" aria-label="Página web - Próximamente">
+          <i class="bi bi-globe2"></i>
+          <span>Página Web</span>
+        </a>
+      </main>
+
+      <footer>
+        Diseñado por <a href="https://websign.com.ar" target="_blank" rel="noopener">Websign</a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal Bootstrap para construcción -->
+  <div class="modal fade" id="constructionModal" tabindex="-1" aria-labelledby="constructionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <div class="construction-icon-wrapper mb-3">
+            <i class="bi bi-tools construction-icon-large"></i>
+          </div>
+          <h2 class="h4 mb-3">Próximamente Disponible</h2>
+          <p class="text-muted mb-4" id="constructionMessage">Esta sección estará disponible muy pronto.</p>
+          <button type="button" class="btn btn-primary-custom px-5" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Actualizar mensaje del modal según el servicio
+    const constructionModal = document.getElementById('constructionModal');
+    constructionModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const service = button.getAttribute('data-service');
+      const message = document.getElementById('constructionMessage');
+      
+      if (service === 'Instagram') {
+        message.textContent = 'Nuestro Instagram estará disponible próximamente.';
+      } else if (service === 'Página Web') {
+        message.textContent = 'Nuestra página web completa estará disponible muy pronto.';
+      }
+    });
+  </script>
+</body>
+</html>
